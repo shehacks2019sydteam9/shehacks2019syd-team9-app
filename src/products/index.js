@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid'
-import SearchIcon from '@material-ui/icons/Search';
+import Fab from '@material-ui/core/Fab'
+import SearchIcon from '@material-ui/icons/Search'
+import PhotoCameraIcon from '@material-ui/icons/PhotoCamera'
 import TextField from '@material-ui/core/TextField'
 import Product from './Product'
 
 class ProductList extends Component {
   state = {
     products: [],
-    searchString: ''
+    searchString: '',
+    showResult: false
   };
 
   constructor() {
@@ -47,14 +50,31 @@ class ProductList extends Component {
     return (
       <div>
         { this.state.products ? (
-          <div>
-            <SearchIcon/>
-            <TextField style={{padding: 24}}
+          <div style={{paddingLeft: 24}}>
+            <h2 >Choose a climate conscious choice</h2>
+            <h4>Search for your daily food consumption and see the environment impact</h4>
+            <SearchIcon style={{paddingTop: 20}}/>
+            <TextField style={{}}
                        id="searchInput"
                        placeholder="Search for Products"
                        margin="normal"
                        onChange={this.onSearchInputChange}
-            />
+            >
+            </TextField>
+            <h4>Or scan your product to get the details</h4>
+            <div>
+              <Fab
+                variant="extended"
+                size="medium"
+                color="primary"
+                aria-label="Add"
+                href="#"
+              >
+                <PhotoCameraIcon style={{paddingRight: 12}}/>
+                Scan your product
+              </Fab>
+            </div>
+
             <Grid container spacing={24} style={{padding: 24}}>
               { this.state.products.map(currentProduct => (
                 <Grid item xs={12} sm={6} lg={4} xl={3}>
