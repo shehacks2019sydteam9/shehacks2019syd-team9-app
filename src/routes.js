@@ -3,7 +3,7 @@ import { Route, Router, Switch } from 'react-router-dom'
 import App from './App'
 import history from './history'
 import ProductList from './products/index.js'
-import Product from './product/index.js'
+import ProductInfo from './product/index.js'
 
 export const createRoutes = () => {
   return (
@@ -18,7 +18,7 @@ export const createRoutes = () => {
           <Route
             exact
             path="/product/:id"
-            render={props => <Product {...props} />}
+            render={props => <ProductInfo {...props} />}
           />
         </Switch>
       </App>
