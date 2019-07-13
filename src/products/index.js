@@ -4,37 +4,33 @@ import TextField from '@material-ui/core/TextField'
 import * as contentful from 'contentful'
 import Product from './Product'
 
-const SPACE_ID = 'TO FILL IN';
-const ACCESS_TOKEN = 'TO FILL IN';
-const client = contentful.createClient({
-  space: SPACE_ID,
-  accessToken: ACCESS_TOKEN
-});
-
 class ProductList extends Component {
   state = {
-    courses: [],
+    products: [],
     searchString: ''
   };
 
   constructor() {
     super()
-    this.getCourses()
   }
 
-  getCourses = () => {
-    client.getEntries({
-      content_type: 'course',
-      query: this.state.searchString
-    })
-      .then((response) => {
-        this.setState({courses: response.items});
-        console.log(this.state.courses)
-      })
-      .catch((error) => {
-        console.log("Error occurred while fetching Entries");
-        console.error(error)
-      })
+  getProducts = () => {
+    // TODO API call for products search
+
+    const products = [
+      {
+        id: 1,
+        imageUrl: 'https://cdn0.woolworths.media/content/wowproductimages/medium/667988.jpg',
+        productName: 'Pauls Farmhouse Gold Organic Milk 1.5l'
+      },
+      {
+        id: 2,
+        imageUrl: 'https://cdn0.woolworths.media/content/wowproductimages/medium/405010.jpg',
+        productName: 'Pauls Farmhouse Gold Milk 1.5l'
+      }
+    ];
+
+    this.setState({ products });
   };
 
   onSearchInputChange = (event) => {
@@ -44,29 +40,29 @@ class ProductList extends Component {
     } else {
       this.setState({searchString: ''})
     }
-    this.getCourses()
+    this.getProducts()
   };
 
   render() {
     return (
       <div>
-        { this.state.courses ? (
+        { this.state.products ? (
           <div>
             <TextField style={{padding: 24}}
                        id="searchInput"
-                       placeholder="Search for Courses"
+                       placeholder="Search for Products"
                        margin="normal"
                        onChange={this.onSearchInputChange}
             />
             <Grid container spacing={24} style={{padding: 24}}>
-              { this.state.courses.map(currentCourse => (
+              { this.state.products.map(currentProduct => (
                 <Grid item xs={12} sm={6} lg={4} xl={3}>
-                  <Product course={currentCourse} />
+                  <Product item={currentProduct} />
                 </Grid>
               ))}
             </Grid>
           </div>
-        ) : "No courses found" }
+        ) : "No match product found" }
       </div>
     )
   }
