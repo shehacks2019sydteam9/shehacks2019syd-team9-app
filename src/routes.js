@@ -5,6 +5,7 @@ import history from './history'
 import ProductList from './products/index.js'
 import Product from './products/index.js'
 import Info from "./infoPage/info.js";
+import ProductInfo from './product/index.js'
 export const createRoutes = () => {
   return(
     <Router history={history} component={App}>
@@ -18,7 +19,7 @@ export const createRoutes = () => {
           <Route
             exact
             path="/product/:id"
-            render={props => <Product {...props} />}
+            render={props => <ProductInfo {...props} />}
           />
           <Route exact path="/info" component={Info} />
         </Switch>
