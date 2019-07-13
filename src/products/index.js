@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid'
+import SearchIcon from '@material-ui/icons/Search';
 import TextField from '@material-ui/core/TextField'
-import * as contentful from 'contentful'
 import Product from './Product'
 
 class ProductList extends Component {
@@ -48,6 +48,7 @@ class ProductList extends Component {
       <div>
         { this.state.products ? (
           <div>
+            <SearchIcon/>
             <TextField style={{padding: 24}}
                        id="searchInput"
                        placeholder="Search for Products"
