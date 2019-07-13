@@ -8,25 +8,25 @@ import Typography from '@material-ui/core/Typography'
 
 const Product = (props) => {
   console.log(props) // TODO temp debug code
+  const productUrl = `/product/${props.item.id}`;
+  console.log(productUrl)
+
   return(
     <div>
-      { props.course ? (
+      { props.item ? (
         <Card >
           <CardMedia style={{height: 0, paddingTop: '56.25%'}}
-                     image={props.course.fields.image.fields.file.url}
-                     title={props.course.fields.title}
+                     image={props.item.imageUrl}
+                     title={props.item.productName}
           />
           <CardContent>
             <Typography gutterBottom variant="headline" component="h2">
-              {props.course.fields.title}
-            </Typography>
-            <Typography component="p">
-              {props.course.fields.description}
+              {props.item.productName}
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" color="primary" href={props.course.fields.url} target="_blank">
-              Go To Course
+            <Button size="small" color="primary" href={productUrl}>
+              Go to product
             </Button>
           </CardActions>
         </Card>
