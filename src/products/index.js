@@ -75,7 +75,7 @@ class ProductList extends Component {
               </Fab>
             </div>
 
-            <Grid container spacing={24} style={{padding: 24}}>
+            <Grid container spacing={0} style={{paddingTop: 24}}>
               { this.state.products.map(currentProduct => (
                 <Grid item xs={12} sm={6} lg={4} xl={3}>
                   <Product item={currentProduct} />
