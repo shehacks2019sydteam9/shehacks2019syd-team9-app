@@ -32,13 +32,13 @@ class ProductInfo extends Component {
         id: 1,
         imageUrl: 'https://cdn0.woolworths.media/content/wowproductimages/medium/667988.jpg',
         productName: 'Pauls Farmhouse Gold Organic Milk 1.5l',
-        productDescription: 'As youve probably noticed the mods have been largely absent during the past few fortnights. Whether you think they are trying to convince investors to fund their shitty chocolate-pineapple-on-a-stick business or unclogging the poop jam from the local prison toilets is up to you.'
+        productDescription: 'Farmhouse Gold Organic is wholesome milk made on Australian farms free from synthetic fertilisers, pesticides  and herbicides. Extra creamy Farmhouse Gold Organic Milk has a smooth, creamy taste you will savour and is 100% certified organic.',
       },
       {
         id: 2,
         imageUrl: 'https://cdn0.woolworths.media/content/wowproductimages/medium/405010.jpg',
         productName: 'Pauls Farmhouse Gold Organic Milk 1.5l',
-        productDescription: 'As youve probably noticed the mods have been largely absent during the past few fortnights. Whether you think they are trying to convince investors to fund their shitty chocolate-pineapple-on-a-stick business or unclogging the poop jam from the local prison toilets is up to you.'
+        productDescription: 'Farmhouse Gold Organic is wholesome milk made on Australian farms free from synthetic fertilisers, pesticides  and herbicides. Extra creamy Farmhouse Gold Organic Milk has a smooth, creamy taste you will savour and is 100% certified organic.',
       }
     ];
     this.setState({ product: products.filter(product =>product.id===parseInt(this.state.productID.id))[0]});
@@ -50,13 +50,13 @@ class ProductInfo extends Component {
     return (
       <div>
         <div style={{display: 'inline-block' , width: '88%', float: 'left'}}>
-          <Card>            
+          <Card>
             <Typography gutterBottom variant="headline" component="h2"
             style={{padding: '5%'}}
             >
                 {this.state.product.productName}
               </Typography>
-            
+
             <CardMedia style={{height: 0, paddingTop: '100%'}}
                         image={this.state.product.imageUrl}
                         title={this.state.product.productName}

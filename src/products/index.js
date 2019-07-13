@@ -64,7 +64,7 @@ class ProductList extends Component {
           <div style={{paddingLeft: 24}}>
             <span style={this.state.showComponents ? {display: 'block'}:  { display: 'none' }}>
               <h2 >Choose a climate conscious choice</h2>
-              <h4>Search for your daily food consumption and see the environment impact</h4>
+              <h4>Search for a food product and see how it affects the environment.</h4>
             </span>
             <SearchIcon style={{paddingTop: 20}}/>
             <TextField style={{}}

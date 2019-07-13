@@ -15,7 +15,7 @@ const Product = (props) => {
     <div>
       { props.item ? (
         <Card >
-          <CardMedia style={{height: 0, paddingTop: '56.25%'}}
+          <CardMedia style={{height: 0, paddingTop: '90%'}}
                      image={props.item.imageUrl}
                      title={props.item.productName}
           />

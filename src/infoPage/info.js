@@ -30,7 +30,7 @@ const Info = () => {
 
       <div className="container">
         <div className="rating">
-          <p className="textRating">Climate Change Ratings</p>
+          <p className="textRating">Environment Ratings</p>
           <FontAwesomeIcon icon={faStar} className="star" />
           <FontAwesomeIcon icon={faStar} className="star"/>
           <FontAwesomeIcon icon={faStar} className="star"/>
