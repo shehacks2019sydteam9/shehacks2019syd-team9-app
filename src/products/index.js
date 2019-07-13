@@ -24,7 +24,16 @@ class ProductList extends Component {
       {
         id: 1,
         imageUrl: 'https://cdn0.woolworths.media/content/wowproductimages/medium/667988.jpg',
-        productName: 'Pauls Farmhouse Gold Organic Milk 1.5l'
+        productName: 'Pauls Farmhouse Gold Organic Milk 1.5l',
+        servingSize: '1 glass (200ml) per serving',
+        greenhouseGas: '229 Kg',
+        petrolCar: '585 km',
+        heatingHome: '36 days',
+        water: '45,733 litres',
+        showers: '703 showers',
+        land: '652m²',
+        tenisCourts: '2'
+
       },
       {
         id: 2,

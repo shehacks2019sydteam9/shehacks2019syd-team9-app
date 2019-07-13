@@ -3,10 +3,11 @@ import { Route, Router, Switch } from 'react-router-dom'
 import App from './App'
 import history from './history'
 import ProductList from './products/index.js'
+import Product from './products/index.js'
+import Info from "./infoPage/info.js";
 import ProductInfo from './product/index.js'
-
 export const createRoutes = () => {
-  return (
+  return(
     <Router history={history} component={App}>
       <App>
         <Switch>
@@ -20,6 +21,7 @@ export const createRoutes = () => {
             path="/product/:id"
             render={props => <ProductInfo {...props} />}
           />
+          <Route exact path="/info" component={Info} />
         </Switch>
       </App>
     </Router>
