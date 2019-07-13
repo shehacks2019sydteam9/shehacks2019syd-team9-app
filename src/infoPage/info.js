@@ -1,10 +1,10 @@
 import React from 'react'
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCarSide, faTemperatureHigh, faShower, faTree } from "@fortawesome/free-solid-svg-icons";
+import { faCarSide, faShower, faTree } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./info.css"
 
-library.add(faCarSide, faTemperatureHigh, faShower, faTree);
+library.add(faCarSide, faShower, faTree);
 
 const Info = () =>{
 
@@ -20,37 +20,44 @@ const Info = () =>{
     tenisCourts: '2'
   }
 
-
-
   const productName = product.productName
-  const servingSize = product.servingSize
   const greenhouseGas = product.greenhouseGas
   const petrolCar = product.petrolCar
-  const heatingHome = product.heatingHome
   const water = product.water
-  const showers = product.showers
-  const land = product.land
-  const tenisCourts = product.tenisCourts
 
   return(
     <div className="main">
+
       <h1>{productName}</h1>
-      <h2>{servingSize}</h2>
 
       <div className="container">
 
+      <div className="rating">
+        <p>Climate Change Ratings</p>
+        <p> * * * * * </p>
+      </div>
+
+      <div>
+        <p>Your annual consumption of dairy milk is contributing to:</p>
+      </div>
+
+
         <div className="item">
-          <p>Over an entire year your consumption of dairy milk is contributing {greenhouseGas} to your annual greenhouse gas emissions.</p>
-          <p><FontAwesomeIcon icon={faCarSide} /> That's the equivalent of driving a regular petrol car {petrolCar}.</p>
-          <p>OR</p>
-          <p><FontAwesomeIcon icon={faTemperatureHigh} /> the same as heating the average UK home for {heatingHome}.</p>
+        <FontAwesomeIcon icon={faTree} />
+          <p>{greenhouseGas}</p>
+          <p> to your greenhouse gas emissions (annually)</p>
         </div>
 
         <div className="item">
-          <p>Your consumption of dairy milk also uses</p>
-          <p><FontAwesomeIcon icon={faShower} /> {water} litres of water, equal to {showers} lasting eight minutes.</p>
-          <p>AND</p>
-          <p><FontAwesomeIcon icon={faTree} /> {land} land, equal to the space of {tenisCourts} tennis courts.</p>
+          <FontAwesomeIcon icon={faCarSide} />
+          <p>{petrolCar}</p>
+          <p>is the distance equivalent from a regular petrol car</p>
+        </div>
+
+        <div className="item">
+          <FontAwesomeIcon icon={faShower} />
+          <p>{water}</p>
+          <p>is the amount of water needed to keep these cows fed and healthy.</p>
         </div>
 
       </div>
