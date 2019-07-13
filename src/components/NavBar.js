@@ -9,7 +9,7 @@ const NavBar = () => {
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="title" color="inherit">
-                        Eco Shopping Buddy
+                       EBud
                     </Typography>
                 </Toolbar>
             </AppBar>
