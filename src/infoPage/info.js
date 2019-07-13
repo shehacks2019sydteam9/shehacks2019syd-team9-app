@@ -1,69 +1,79 @@
-import React from 'react'
+import React from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCarSide, faShower, faTree } from "@fortawesome/free-solid-svg-icons";
+import { faCarSide, faWater, faTree, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./info.css"
+import "./info.css";
 
-library.add(faCarSide, faShower, faTree);
+library.add(faCarSide, faWater, faTree );
 
-const Info = () =>{
-
+const Info = () => {
   const product = {
-    productName: 'Pauls Farmhouse Gold Organic Milk 1.5l',
-    servingSize: '1 glass (200ml) per serving',
-    greenhouseGas: '229 Kg',
-    petrolCar: '585 km',
-    heatingHome: '36 days',
-    water: '45,733 litres',
-    showers: '703 showers',
-    land: '652m²',
-    tenisCourts: '2'
-  }
+    productName: "Pauls Farmhouse Gold Organic Milk 1.5l",
+    servingSize: "1 glass (200ml) per serving",
+    greenhouseGas: "229 Kg",
+    petrolCar: "585 km",
+    heatingHome: "36 days",
+    water: "45,733 litres",
+    showers: "703 showers",
+    land: "652m²",
+    tenisCourts: "2"
+  };
 
-  const productName = product.productName
-  const greenhouseGas = product.greenhouseGas
-  const petrolCar = product.petrolCar
-  const water = product.water
+  const productName = product.productName;
+  const greenhouseGas = product.greenhouseGas;
+  const petrolCar = product.petrolCar;
+  const water = product.water;
 
-  return(
+  return (
     <div className="main">
-
       <h1>{productName}</h1>
 
       <div className="container">
+        <div className="rating">
+          <p className="textRating">Climate Change Ratings</p>
+          <FontAwesomeIcon icon={faStar} className="star" />
+          <FontAwesomeIcon icon={faStar} className="star"/>
+          <FontAwesomeIcon icon={faStar} className="star"/>
+        </div>
 
-      <div className="rating">
-        <p>Climate Change Ratings</p>
-        <p> * * * * * </p>
-      </div>
-
-      <div>
-        <p>Your annual consumption of dairy milk is contributing to:</p>
-      </div>
-
-
-        <div className="item">
-        <FontAwesomeIcon icon={faTree} />
-          <p>{greenhouseGas}</p>
-          <p> to your greenhouse gas emissions (annually)</p>
+        <div>
+          <p>Your annual consumption of dairy milk is contributing to:</p>
         </div>
 
         <div className="item">
-          <FontAwesomeIcon icon={faCarSide} />
-          <p>{petrolCar}</p>
-          <p>is the distance equivalent from a regular petrol car</p>
+          <div className="iconItem">
+            <FontAwesomeIcon icon={faTree} className="tree"/>
+          </div>
+          <div className="descriptionItem">
+            <p className="amount">{greenhouseGas}</p>
+            <p>of greenhouse gas emissions</p>
+          </div>
         </div>
 
         <div className="item">
-          <FontAwesomeIcon icon={faShower} />
-          <p>{water}</p>
-          <p>is the amount of water needed to keep these cows fed and healthy.</p>
+          <div className="iconItem">
+            <FontAwesomeIcon icon={faWater} className="water"/>
+          </div>
+          <div className="descriptionItem">
+            <p className="amount">{water}</p>
+            <p>
+              is the amount of water needed to keep these cows fed and healthy
+            </p>
+          </div>
         </div>
 
+        <div className="item">
+          <div className="iconItem">
+            <FontAwesomeIcon icon={faCarSide} className="car" />
+          </div>
+          <div className="descriptionItem">
+            <p className="amount">{petrolCar}</p>
+            <p>is the distance equivalent from a regular petrol car</p>
+          </div>
+        </div>
       </div>
-
     </div>
-  )
+  );
 };
 
-export default Info
+export default Info;
