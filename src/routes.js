@@ -3,8 +3,10 @@ import { Route, Router, Switch } from 'react-router-dom'
 import App from './App'
 import history from './history'
 import ProductList from './products/index.js'
+import Product from './products/index.js'
 import Info from "./infoPage/info.js";
 export const createRoutes = () => {
+  return(
     <Router history={history} component={App}>
       <App>
         <Switch>
@@ -22,4 +24,5 @@ export const createRoutes = () => {
         </Switch>
       </App>
     </Router>
+  );
 };
