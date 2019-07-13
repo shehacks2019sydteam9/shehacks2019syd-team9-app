@@ -10,7 +10,8 @@ class ProductList extends Component {
   state = {
     products: [],
     searchString: '',
-    showResult: false
+    showResult: false,
+    showComponents: true
   };
 
   constructor() {
@@ -46,6 +47,7 @@ class ProductList extends Component {
   };
 
   onSearchInputChange = (event) => {
+    this.state.showComponents = true ? event.target.value.length === 0: false;
     console.log("Search changed ..." + event.target.value)
     if (event.target.value) {
       this.setState({searchString: event.target.value})
@@ -60,8 +62,10 @@ class ProductList extends Component {
       <div>
         { this.state.products ? (
           <div style={{paddingLeft: 24}}>
-            <h2 >Choose a climate conscious choice</h2>
-            <h4>Search for your daily food consumption and see the environment impact</h4>
+            <span style={this.state.showComponents ? {display: 'block'}:  { display: 'none' }}>
+              <h2 >Choose a climate conscious choice</h2>
+              <h4>Search for your daily food consumption and see the environment impact</h4>
+            </span>
             <SearchIcon style={{paddingTop: 20}}/>
             <TextField style={{}}
                        id="searchInput"
@@ -70,19 +74,21 @@ class ProductList extends Component {
                        onChange={this.onSearchInputChange}
             >
             </TextField>
-            <h4>Or scan your product to get the details</h4>
-            <div>
-              <Fab
-                variant="extended"
-                size="medium"
-                color="primary"
-                aria-label="Add"
-                href="#"
-              >
-                <PhotoCameraIcon style={{paddingRight: 12}}/>
-                Scan your product
-              </Fab>
+            <span style={this.state.showComponents ? {display: 'block'}:  { display: 'none' }}>
+              <h4>Or scan your product to get the details</h4>
+              <div>
+                <Fab
+                  variant="extended"
+                  size="medium"
+                  color="primary"
+                  aria-label="Add"
+                  href="#"
+                >
+                  <PhotoCameraIcon style={{paddingRight: 12}}/>
+                  Scan your product
+                </Fab>
             </div>
+          </span>
 
             <Grid container spacing={24} style={{padding: 24}}>
               { this.state.products.map(currentProduct => (
